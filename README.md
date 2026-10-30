@@ -4,7 +4,7 @@ Bouncy castle rental website for LittleFunWorld, Singapore. One static page (`in
 
 ## How it works
 
-- **Enquiries:** the Book form saves each enquiry to the Supabase table `bc_enquiries`, then opens WhatsApp (web.whatsapp.com on a computer, the app on a phone) with the details filled in for +65 8922 9783. The customer presses Send.
+- **Enquiries:** the Book form saves each enquiry to the Supabase table `bc_enquiries`, then opens WhatsApp (web.whatsapp.com on a computer, the app on a phone) with the details filled in for +65 8115 7896. The customer presses Send.
 - **Castles:** loaded from `bc_castles` (name, tagline, size, photo). Photos come from the shared Google Drive castle folder.
 - **Gallery:** photo IDs come from `bc_gallery`; the photos are in the shared Google Drive gallery folder. 12 photos per page in a 4 x 3 grid.
 - **Reviews:** approved rows from `bc_reviews` are shown. New reviews submitted on the site stay hidden until `approved` is set to true in Supabase.
