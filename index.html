@@ -556,7 +556,7 @@ button,input,textarea,select{font:inherit;color:inherit}
         <datalist id="dl-io"><option value="Indoor"><option value="Outdoor"></datalist>
         <datalist id="dl-castle"></datalist>
         <div class="form-foot">
-          <button class="pill solid big" id="saveBtn" type="submit">Save &amp; send on WhatsApp</button>
+          <button class="pill solid big" id="saveBtn" type="submit">Save and Send on WhatsApp</button>
           <p>By sending, you agree to our <a href="#terms">terms and conditions</a>.</p>
         </div>
       </form>
@@ -1096,7 +1096,7 @@ function prefillCastle(){ if(pendingCastle){ $("#f-castle").value = pendingCastl
     warn.hidden = saved;
     if(!saved) warn.textContent = "We couldn't save a copy of your enquiry on our side, so please make sure you send the WhatsApp message.";
     f.hidden = true; $("#done").hidden = false;
-    btn.disabled = false; btn.textContent = "Save & send on WhatsApp";
+    btn.disabled = false; btn.textContent = "Save and Send on WhatsApp";
     $("#formPanel").scrollIntoView({behavior: REDUCED ? "auto" : "smooth", block:"start"});
   });
   $("#newEnq").addEventListener("click", () => { f.reset(); f.hidden = false; $("#done").hidden = true; });
