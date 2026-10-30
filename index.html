@@ -273,7 +273,7 @@ button,input,textarea,select{font:inherit;color:inherit}
     <div class="frame" id="frame">
       <div class="badge" id="badge"><i></i>Delivered islandwide · HDB, condo &amp; landed</div>
       <h1 class="h1" id="h1"><span class="l l1">Turn Any Party</span><span class="l l2">into a Bounce House</span></h1>
-      <p class="sub" id="sub">Six colourful bouncy castles, set up at your HDB, condo or<br>landed home. Tell us the date and the place, and our crew<br>handles the delivery, setup and collection.</p>
+      <p class="sub" id="sub">Six colourful bouncy castles, set up at your HDB, condo or <br>landed home. Tell us the date and the place, and our crew <br>handles the delivery, setup and collection.</p>
 
       <div class="reel" id="reel" aria-label="Photos from past parties. Drag to browse." role="region"></div>
 
@@ -597,7 +597,7 @@ const reel = (() => {
   function layout(){
     const W = el.clientWidth, H = el.clientHeight;
     const phone = innerWidth <= 820;
-    u = phone ? W/640 : W/1440;
+    u = phone ? Math.min(W/640, H/480) : W/1440;
     const ox = W/2 - 720*u;
     const cyBase = phone ? H/2/u : 252;
     const n = PHOTOS.length || 1;
