@@ -346,6 +346,20 @@ button,input,textarea,select{font:inherit;color:inherit}
 .terms li.key{border-color:var(--green)}
 .terms small{display:block;color:var(--muted);margin-top:4px;font-size:14px}
 
+/* ---------- Promotion ---------- */
+.promo{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start;padding-bottom:88px}
+.promo-flyer{margin:0;border-radius:22px;overflow:hidden;box-shadow:0 22px 50px rgba(40,20,90,.22);background:#1E6BE0}
+.promo-flyer img{width:100%;height:auto;display:block}
+.promo-side{position:sticky;top:96px;display:flex;flex-direction:column;gap:14px}
+.promo-price{margin:0;display:flex;flex-direction:column;line-height:1;color:var(--btn-2)}
+.promo-price small{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.promo-price b{font-family:var(--display);font-size:72px;letter-spacing:-.03em;margin:6px 0 4px}
+.promo-price span{font-weight:600;font-size:18px;color:var(--green)}
+.promo-list{margin:4px 0 6px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.promo-list li{padding-left:28px;position:relative}
+.promo-list li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--mint);color:var(--green);font-size:12px;font-weight:700;display:grid;place-items:center}
+.promo-side .pill{justify-content:center}
+@media (max-width:860px){.promo{grid-template-columns:1fr}.promo-side{position:static}}
 /* ---------- Footer ---------- */
 .foot{background:var(--bar);color:#E4DAF7}
 .foot .wrap{padding-block:44px;display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
@@ -366,7 +380,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   .nav{gap:22px}
   .top-in{gap:18px}
 }
-@media (max-width:1040px){
+@media (max-width:1140px){
   .top .nav{display:none}
   .top .nav-row{display:flex}
   .top-btns .ghost{display:inline-flex}
@@ -406,6 +420,7 @@ button,input,textarea,select{font:inherit;color:inherit}
     <nav class="nav" aria-label="Main">
       <a href="#home" data-route="home">Home</a>
       <a href="#book" data-route="book">Book</a>
+      <a href="#promotion" data-route="promotion">Promotion</a>
       <a href="#gallery" data-route="gallery">Gallery</a>
       <a href="#reviews" data-route="reviews">Reviews</a>
       <a href="#terms" data-route="terms">Terms &amp; Conditions</a>
@@ -418,6 +433,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   <nav class="nav-row" aria-label="Pages">
     <a href="#home" data-route="home">Home</a>
     <a href="#book" data-route="book">Book</a>
+    <a href="#promotion" data-route="promotion">Promotion</a>
     <a href="#gallery" data-route="gallery">Gallery</a>
     <a href="#reviews" data-route="reviews">Reviews</a>
     <a href="#terms" data-route="terms">Terms &amp; Conditions</a>
@@ -583,6 +599,30 @@ button,input,textarea,select{font:inherit;color:inherit}
   </div>
 </section>
 
+<!-- ================= PROMOTION ================= -->
+<section class="view" id="v-promotion" aria-labelledby="promoTitle">
+  <div class="wrap page-head">
+    <h1 class="h2" id="promoTitle">Party Sale Promotion</h1>
+    <p class="lede">Bouncy castles from only $88 nett a day, with a free party gift for every booking.</p>
+  </div>
+  <div class="wrap promo">
+    <figure class="promo-flyer">
+      <img src="assets/promotion.jpg" alt="LittleFunWorld Party Sale flyer: free party gift with every booking, six bouncy castle designs with their sizes, from only $88 nett per day. Book on WhatsApp 8115 7896." width="1024" height="1536" loading="lazy">
+    </figure>
+    <aside class="panel promo-side">
+      <p class="promo-price"><small>From only</small><b>$88</b><span>nett / day</span></p>
+      <ul class="promo-list">
+        <li>Free party gift with every booking</li>
+        <li>Free delivery, setup and collection</li>
+        <li>Sanitised before every rental</li>
+        <li>Birthdays, schools, childcare centres and family days</li>
+      </ul>
+      <a class="pill solid big" href="#book">Book now</a>
+      <a class="pill big" id="waPromo" href="#" target="_blank" rel="noopener">WhatsApp 8115 7896</a>
+    </aside>
+  </div>
+</section>
+
 <!-- ================= GALLERY ================= -->
 <section class="view" id="v-gallery" aria-labelledby="galTitle">
   <div class="wrap page-head">
@@ -661,7 +701,7 @@ button,input,textarea,select{font:inherit;color:inherit}
       <small>Bouncy castle rental in Singapore · WhatsApp +65 8115 7896</small>
     </div>
     <nav aria-label="Footer">
-      <a href="#home">Home</a><a href="#book">Book</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#terms">Terms &amp; Conditions</a>
+      <a href="#home">Home</a><a href="#book">Book</a><a href="#promotion">Promotion</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#terms">Terms &amp; Conditions</a>
     </nav>
   </div>
 </footer>
@@ -762,7 +802,7 @@ let PHOTOS = FALLBACK_PHOTOS.slice();
 const PALETTE = ["#FF6B6B","#F7A8C8","#3FA45B","#3BA7E0","#5B5BD6","#F5B82E"];
 
 /* ================= Router ================= */
-const ROUTES = ["home","book","gallery","reviews","terms"];
+const ROUTES = ["home","book","promotion","gallery","reviews","terms"];
 function route(){
   let r = (location.hash || "#home").slice(1);
   if(!ROUTES.includes(r)) r = "home";
@@ -773,10 +813,11 @@ function route(){
   if(r==="gallery") renderGallery();
   if(r==="reviews") loadReviews();
   if(r==="book") prefillCastle();
-  document.title = {home:"LittleFunWorld", book:"Book a Castle · LittleFunWorld", gallery:"Party Gallery · LittleFunWorld", reviews:"Reviews · LittleFunWorld", terms:"Terms & Conditions · LittleFunWorld"}[r];
+  document.title = {home:"LittleFunWorld", book:"Book a Castle · LittleFunWorld", promotion:"Party Sale Promotion · LittleFunWorld", gallery:"Party Gallery · LittleFunWorld", reviews:"Reviews · LittleFunWorld", terms:"Terms & Conditions · LittleFunWorld"}[r];
 }
 addEventListener("hashchange", route);
 addEventListener("scroll", () => $("#top").classList.toggle("scrolled", scrollY > 4), {passive:true});
+$("#waPromo").href = waLink("Hi! I saw the Party Sale promotion and would like to book a bouncy castle.");
 $("#waTop").href = waLink("Hi! I'd like to ask about renting a bouncy castle.");
 
 /* ================= Curved carousel ================= */
