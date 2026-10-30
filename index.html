@@ -154,13 +154,13 @@ button,input,textarea,select{font:inherit;color:inherit}
   .scene-copy{padding-top:26px;gap:12px}
   .badge{height:32px;font-size:13px;padding:0 13px}
   .cta{height:52px;padding:0 22px;font-size:15.5px}
-  .stage{aspect-ratio:1/1.02;margin-top:-4px}
-  .castle-img.dino{left:-5%;width:60%;bottom:21%}
-  .castle-img.ice{left:39%;width:66%;bottom:15%}
+  .stage{aspect-ratio:1/.8;margin-top:-6px}
+  .castle-img.dino{left:-5%;width:60%;bottom:16%}
+  .castle-img.ice{left:39%;width:66%;bottom:10%}
   .boy-spot{width:10.5%;bottom:31%;animation-name:shuffleM}
   .girl-path{width:13%;animation-name:skipAcrossM}
   .ball{width:5.5%;animation-name:ballRollM}
-  .trees{bottom:26%}
+  .trees{bottom:22%}
   .choose{position:relative;left:auto;bottom:auto;width:auto;margin:-6px 16px 26px}
   .sun{width:150px;height:150px;top:-50px}
 }
@@ -800,8 +800,8 @@ function entrance(){
   const up = [{transform:"translateY(28px)", opacity:0},{transform:"translateY(0)", opacity:1}];
   a(".top-in", [{transform:"translateY(-24px)", opacity:0},{transform:"translateY(0)", opacity:1}], 0, 600);
   a("#badge", [{transform:"scale(.6)", opacity:0},{transform:"scale(1)", opacity:1}], 120, 600);
-  a(".h1 .l1", [{transform:"translateY(36px)", filter:"blur(10px)", opacity:0},{transform:"translateY(0)", filter:"blur(0)", opacity:1}], 240, 800);
-  a(".h1 .l2", [{transform:"translateY(36px)", filter:"blur(10px)", opacity:0},{transform:"translateY(0)", filter:"blur(0)", opacity:1}], 380, 800);
+  a(".h1 .l1", up, 240, 800);
+  a(".h1 .l2", up, 380, 800);
   a("#sub", up, 540); a("#ctaRow", up, 660);
   a(".castle-img.dino", [{transform:"translateY(40px) scale(.9)", opacity:0},{transform:"translateY(0) scale(1)", opacity:1}], 500, 900);
   a(".castle-img.ice", [{transform:"translateY(40px) scale(.9)", opacity:0},{transform:"translateY(0) scale(1)", opacity:1}], 650, 900);
