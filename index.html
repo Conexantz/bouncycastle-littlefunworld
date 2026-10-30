@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Little Fun World</title>
+<title>LittleFunWorld</title>
 <meta name="description" content="Bouncy castle rental in Singapore for HDB, condo and landed homes. Browse castles, see past parties and send a booking enquiry.">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -14,7 +14,7 @@
 /* Layout: one-screen 1440x1000 "frame" hero with a curved photo carousel, then content pages routed by #hash. Single light theme by design. */
 :root{
   --bg:#F5F8EF; --green:#08482D; --green-2:#0E5E3C; --mint:#DAE7C7; --ink:#101410; --muted:#5E5E61;
-  --card:#FFFFFF; --line:#D9E3CC; --danger:#B3261E;
+  --card:#FFFFFF; --btn:#E2337F; --btn-2:#C41F6C; --btn-glow:rgba(226,51,127,.32); --line:#D9E3CC; --danger:#B3261E;
   --display:"Inter Tight", "Inter", system-ui, sans-serif;
   --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --hand:"Caveat", "Comic Sans MS", cursive;
@@ -44,9 +44,9 @@ button,input,textarea,select{font:inherit;color:inherit}
 .nav a[aria-current="page"]{color:#fff;border-bottom-color:#FFC93C}
 .top-btns{display:flex;gap:8px;flex:none}
 .pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 20px;border-radius:999px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;white-space:nowrap}
-.pill.solid{background:var(--green);border-color:var(--green);color:#fff}
-.pill.solid:hover{background:var(--green-2)}
-.pill:hover{border-color:var(--green)}
+.pill.solid{background:var(--btn);border-color:var(--btn);color:#fff}
+.pill.solid:hover{background:var(--btn-2);border-color:var(--btn-2)}
+.pill:hover{border-color:var(--btn)}
 
 /* ---------- Views ---------- */
 .view{display:none}
@@ -73,9 +73,9 @@ button,input,textarea,select{font:inherit;color:inherit}
 .h1 .l2{letter-spacing:-.022em;color:var(--green)}
 .sub{margin:0;max-width:52ch;font-size:clamp(16px, 1.45vw, 20px);line-height:1.55;color:#183B2C}
 .cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
-.cta{display:inline-flex;align-items:center;justify-content:center;height:58px;padding:0 30px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:17px;box-shadow:0 10px 26px rgba(8,72,45,.3);transition:transform .15s, background .15s}
-.cta:hover{background:var(--green-2);transform:translateY(-2px)}
-.cta.alt{background:#fff;color:var(--green);box-shadow:0 8px 22px rgba(20,70,110,.14)}
+.cta{display:inline-flex;align-items:center;justify-content:center;height:58px;padding:0 30px;border-radius:999px;background:linear-gradient(180deg, #F0479A, var(--btn));color:#fff;text-decoration:none;font-weight:600;font-size:17px;box-shadow:0 10px 26px var(--btn-glow);transition:transform .15s, background .15s}
+.cta:hover{background:var(--btn-2);transform:translateY(-2px)}
+.cta.alt{background:#fff;color:var(--btn-2);box-shadow:0 8px 22px rgba(20,70,110,.14)}
 .cta.alt:hover{background:#F2F7EC}
 
 .stage{position:relative;z-index:3;width:100%;max-width:1440px;margin:-9vw auto 0;aspect-ratio:16/7.4}
@@ -388,9 +388,9 @@ button,input,textarea,select{font:inherit;color:inherit}
 
 <header class="top" id="top">
   <div class="top-in">
-    <a class="logo" href="#home" aria-label="Little Fun World home">
+    <a class="logo" href="#home" aria-label="LittleFunWorld home">
       <img src="assets/logo.png" alt="" width="40" height="40">
-      Little Fun World
+      LittleFunWorld
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#home" data-route="home">Home</a>
@@ -647,7 +647,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 <footer class="foot">
   <div class="wrap">
     <div>
-      <a class="logo" href="#home"><img src="assets/logo.png" alt="" width="40" height="40">Little Fun World</a>
+      <a class="logo" href="#home"><img src="assets/logo.png" alt="" width="40" height="40">LittleFunWorld</a>
       <small>Bouncy castle rental in Singapore · WhatsApp +65 8922 9783</small>
     </div>
     <nav aria-label="Footer">
@@ -762,7 +762,7 @@ function route(){
   if(r==="gallery") renderGallery();
   if(r==="reviews") loadReviews();
   if(r==="book") prefillCastle();
-  document.title = {home:"Little Fun World", book:"Book a Castle · Little Fun World", gallery:"Party Gallery · Little Fun World", reviews:"Reviews · Little Fun World", terms:"Terms · Little Fun World"}[r];
+  document.title = {home:"LittleFunWorld", book:"Book a Castle · LittleFunWorld", gallery:"Party Gallery · LittleFunWorld", reviews:"Reviews · LittleFunWorld", terms:"Terms · LittleFunWorld"}[r];
 }
 addEventListener("hashchange", route);
 addEventListener("scroll", () => $("#top").classList.toggle("scrolled", scrollY > 4), {passive:true});

@@ -1,6 +1,6 @@
-# Little Fun World
+# LittleFunWorld
 
-Bouncy castle rental website for Little Fun World, Singapore. One static page (`index.html`) with five sections: Home, Book, Gallery, Reviews and Terms.
+Bouncy castle rental website for LittleFunWorld, Singapore. One static page (`index.html`) with five sections: Home, Book, Gallery, Reviews and Terms.
 
 ## How it works
 
