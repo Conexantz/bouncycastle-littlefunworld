@@ -408,7 +408,7 @@ button,input,textarea,select{font:inherit;color:inherit}
       <a href="#book" data-route="book">Book</a>
       <a href="#gallery" data-route="gallery">Gallery</a>
       <a href="#reviews" data-route="reviews">Reviews</a>
-      <a href="#terms" data-route="terms">Terms and Conditions</a>
+      <a href="#terms" data-route="terms">Terms &amp; Conditions</a>
     </nav>
     <div class="top-btns">
       <a class="pill ghost" id="waTop" href="#" target="_blank" rel="noopener">WhatsApp us</a>
@@ -420,7 +420,7 @@ button,input,textarea,select{font:inherit;color:inherit}
     <a href="#book" data-route="book">Book</a>
     <a href="#gallery" data-route="gallery">Gallery</a>
     <a href="#reviews" data-route="reviews">Reviews</a>
-    <a href="#terms" data-route="terms">Terms and Conditions</a>
+    <a href="#terms" data-route="terms">Terms &amp; Conditions</a>
   </nav>
 </header>
 
@@ -557,7 +557,7 @@ button,input,textarea,select{font:inherit;color:inherit}
         <datalist id="dl-castle"></datalist>
         <div class="form-foot">
           <button class="pill solid big" id="saveBtn" type="submit">Save and Send on WhatsApp</button>
-          <p>By sending, you agree to our <a href="#terms">terms and conditions</a>.</p>
+          <p>By sending, you agree to our <a href="#terms">Terms &amp; Conditions</a>.</p>
         </div>
       </form>
       <div class="done" id="done" hidden>
@@ -633,7 +633,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 <section class="view" id="v-terms" aria-labelledby="tcTitle">
   <div class="wrap page-head">
     <p class="eyebrow">Before you book</p>
-    <h1 class="h2" id="tcTitle">Terms and conditions</h1>
+    <h1 class="h2" id="tcTitle">Terms &amp; Conditions</h1>
     <p class="lede">Please read these before sending your enquiry.</p>
   </div>
   <div class="wrap">
@@ -661,7 +661,7 @@ button,input,textarea,select{font:inherit;color:inherit}
       <small>Bouncy castle rental in Singapore · WhatsApp +65 8115 7896</small>
     </div>
     <nav aria-label="Footer">
-      <a href="#home">Home</a><a href="#book">Book</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#terms">Terms and Conditions</a>
+      <a href="#home">Home</a><a href="#book">Book</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#terms">Terms &amp; Conditions</a>
     </nav>
   </div>
 </footer>
@@ -773,7 +773,7 @@ function route(){
   if(r==="gallery") renderGallery();
   if(r==="reviews") loadReviews();
   if(r==="book") prefillCastle();
-  document.title = {home:"LittleFunWorld", book:"Book a Castle · LittleFunWorld", gallery:"Party Gallery · LittleFunWorld", reviews:"Reviews · LittleFunWorld", terms:"Terms and Conditions · LittleFunWorld"}[r];
+  document.title = {home:"LittleFunWorld", book:"Book a Castle · LittleFunWorld", gallery:"Party Gallery · LittleFunWorld", reviews:"Reviews · LittleFunWorld", terms:"Terms & Conditions · LittleFunWorld"}[r];
 }
 addEventListener("hashchange", route);
 addEventListener("scroll", () => $("#top").classList.toggle("scrolled", scrollY > 4), {passive:true});
