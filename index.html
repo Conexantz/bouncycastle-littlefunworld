@@ -39,7 +39,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-size:21px;letter-spacing:-.02em;flex:none}
 .logo img{width:40px;height:40px;object-fit:contain;flex:none}
 .nav{display:flex;gap:31px;margin:0 auto}
-.nav a{text-decoration:none;color:#fff;font-size:16px;font-weight:500;padding:6px 2px;border-bottom:2px solid transparent}
+.nav a{white-space:nowrap;text-decoration:none;color:#fff;font-size:16px;font-weight:500;padding:6px 2px;border-bottom:2px solid transparent}
 .nav a:hover{color:#FFB3D6}
 .nav a[aria-current="page"]{color:#fff;border-bottom-color:#FF7AB8}
 .top-btns{display:flex;gap:8px;flex:none}
@@ -361,6 +361,15 @@ button,input,textarea,select{font:inherit;color:inherit}
   .castles{grid-template-columns:repeat(2, minmax(0,1fr))}
   .book{grid-template-columns:1fr}
   .terms{grid-template-columns:1fr}
+}
+@media (max-width:1180px){
+  .nav{gap:22px}
+  .top-in{gap:18px}
+}
+@media (max-width:1040px){
+  .top .nav{display:none}
+  .top .nav-row{display:flex}
+  .top-btns .ghost{display:inline-flex}
 }
 @media (max-width:820px){
   :root{--header-h:auto}
