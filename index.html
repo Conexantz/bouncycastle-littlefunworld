@@ -937,7 +937,7 @@ const polos = (() => {
   let step = 0, timer = 0;
   function setPhoto(ph, id){
     const next = new Image(); next.alt = "Bouncy castle at a past party"; next.decoding = "async";
-    next.onload = () => { ph.appendChild(next); requestAnimationFrame(() => next.classList.add("on"));
+    next.onload = () => { ph.appendChild(next); setTimeout(() => next.classList.add("on"), 30);
       [...ph.querySelectorAll("img")].slice(0, -1).forEach(old => { old.classList.remove("on"); setTimeout(() => old.remove(), 1100); }); };
     next.onerror = () => { if(next.dataset.t !== "2"){ next.dataset.t = "2"; next.src = photoUrl2(id, 500); } };
     next.src = photoUrl(id, 500);
