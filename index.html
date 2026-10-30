@@ -131,10 +131,26 @@ button,input,textarea,select{font:inherit;color:inherit}
 .k-run .leg.l{animation:stride .25s ease-in-out infinite alternate}
 .k-run .leg.r{animation:stride .25s ease-in-out infinite alternate-reverse}
 .k-run .shadow{animation:shadowHop .5s ease-in-out infinite}
-.run-a{animation:runA 13s ease-in-out infinite}
-.run-b{animation:runB 11s ease-in-out infinite}
-@keyframes runA{0%{left:27%}46%{left:86%}50%{left:86%}96%{left:27%}100%{left:27%}}
-@keyframes runB{0%{left:84%}46%{left:28%}50%{left:28%}96%{left:84%}100%{left:84%}}
+/* laps around the castle: front -> side -> behind (hidden) -> other side -> front */
+.orbit{transform-origin:50% 100%;animation:orbit 15s linear infinite}
+.o2{animation-delay:-7.5s}
+.o3{animation-direction:reverse;animation-duration:17s;animation-delay:-4s}
+@keyframes orbit{
+  0%{left:44%;bottom:0%;transform:scale(1);z-index:7}
+  16%{left:70%;bottom:1%;transform:scale(.97);z-index:7}
+  30%{left:84%;bottom:12%;transform:scale(.82);z-index:7}
+  37%{left:76%;bottom:22%;transform:scale(.7);z-index:7}
+  38%{z-index:1}
+  50%{left:50%;bottom:30%;transform:scale(.6);z-index:1}
+  62%{left:18%;bottom:22%;transform:scale(.7);z-index:1}
+  63%{z-index:7}
+  70%{left:10%;bottom:12%;transform:scale(.82);z-index:7}
+  84%{left:22%;bottom:1%;transform:scale(.97);z-index:7}
+  100%{left:44%;bottom:0%;transform:scale(1);z-index:7}}
+/* running and jumping inside the castle */
+.in-a{animation:inRun 6s ease-in-out infinite}
+.in-b{animation:inRun 7.5s ease-in-out infinite reverse}
+@keyframes inRun{0%,100%{left:39%}50%{left:56.5%}}
 @keyframes jumpHigh{0%{transform:translateY(0) scale(1.05,.93)}10%{transform:translateY(0) scale(.97,1.04)}50%{transform:translateY(-48%) scale(1,1)}90%{transform:translateY(0) scale(.98,1.02)}100%{transform:translateY(0) scale(1.05,.93)}}
 @keyframes jumpLow{0%{transform:translateY(0) scale(1.05,.93)}12%{transform:translateY(0) scale(.97,1.04)}50%{transform:translateY(-55%) scale(1,1)}88%{transform:translateY(0) scale(.98,1.02)}100%{transform:translateY(0) scale(1.05,.93)}}
 @keyframes armsUp{0%,100%{transform:rotate(20deg)}45%,55%{transform:rotate(155deg)}}
@@ -148,7 +164,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 @keyframes stride{from{transform:rotate(-20deg)}to{transform:rotate(20deg)}}
 
 .kid .body,.kid .arm,.kid .leg,.kid .shadow{animation-delay:var(--d,0s)!important}
-.j1{left:33%}.j2{left:55%}.b1{left:41%;bottom:27%}.b2{left:53%;bottom:27%}
+.j1{left:33%}.j2{left:55%}.b1,.b2{bottom:27%}
 /* floating gallery polaroids */
 .polos{position:absolute;inset:0;z-index:3;pointer-events:none}
 .polo{position:absolute;margin:0;width:clamp(130px, 12.5vw, 200px);background:#fff;padding:8px 8px 26px;border-radius:6px;box-shadow:0 14px 30px rgba(20,60,100,.25);transform:rotate(var(--r));animation:polo 6s ease-in-out infinite;animation-delay:var(--dl,0s)}
@@ -199,20 +215,31 @@ button,input,textarea,select{font:inherit;color:inherit}
   .stage{aspect-ratio:1/.9;margin-top:-6px}
   .bcastle{left:8%;width:84%;bottom:6%}
   .k-jump{width:18%}.j1{left:15%}.j2{left:65%}
-  .k-bounce{width:9.5%}.b1{left:33%;bottom:24.5%}.b2{left:55%;bottom:24.5%}
-  .k-run{width:14%}.run-a{animation-name:runAM}.run-b{animation-name:runBM}
+  .k-bounce{width:9.5%}.b1,.b2{bottom:24.5%}.in-a,.in-b{animation-name:inRunM}
+  .k-run{width:14%}.orbit{animation-name:orbitM}
   .balloon{width:38px!important}
   .twinkle{width:4.5%}
   .trees{bottom:22%}
   .choose{position:relative;left:auto;bottom:auto;width:auto;margin:-6px 16px 26px}
   .sun{width:150px;height:150px;top:-50px}
 }
-@keyframes runAM{0%{left:2%}46%{left:84%}50%{left:84%}96%{left:2%}100%{left:2%}}
-@keyframes runBM{0%{left:84%}46%{left:2%}50%{left:2%}96%{left:84%}100%{left:84%}}
+@keyframes inRunM{0%,100%{left:30%}50%{left:60%}}
+@keyframes orbitM{
+  0%{left:42%;bottom:0%;transform:scale(1);z-index:7}
+  16%{left:72%;bottom:1%;transform:scale(.95);z-index:7}
+  30%{left:86%;bottom:12%;transform:scale(.8);z-index:7}
+  37%{left:78%;bottom:22%;transform:scale(.68);z-index:7}
+  38%{z-index:1}
+  50%{left:46%;bottom:30%;transform:scale(.58);z-index:1}
+  62%{left:12%;bottom:22%;transform:scale(.68);z-index:1}
+  63%{z-index:7}
+  70%{left:0%;bottom:12%;transform:scale(.8);z-index:7}
+  84%{left:12%;bottom:1%;transform:scale(.95);z-index:7}
+  100%{left:42%;bottom:0%;transform:scale(1);z-index:7}}
 @media (prefers-reduced-motion:reduce){
   .cloud,.bcastle,.bcastle *,.kid,.kid *,.twinkle,.balloon,.balloon svg{animation:none!important}
   .balloon{display:none}
-  .run-a{left:27%}.run-b{left:80%}
+  .o1{left:24%}.o2{left:76%}.o3{display:none}.in-a{left:42%}.in-b{left:54%}
 }
 /* ---------- Sections ---------- */
 .sec{padding-block:88px}
@@ -895,11 +922,12 @@ const KIDS = [
   {role:"k-jump j1", pos:"", d:"0s", skin:"#F2C7A5", face:"#F6CFAE", style:"pigtails", top:"#FF8FA3", bottom:"#E8D3A8"},
   {role:"k-jump j2", pos:"", d:"-.35s", skin:"#F2C7A5", face:"#F6CFAE", style:"boy", top:"#2F5FB3", stripes:"#FFFFFF", bottom:"#C9A26B"},
   // bouncing on the castle floor
-  {role:"k-bounce b1", pos:"", d:"-.2s", skin:"#C98B62", face:"#D39A70", style:"bun", top:"#9B62E8", bottom:"#FFC93C", skirt:true},
-  {role:"k-bounce b2", pos:"", d:"-.6s", skin:"#E0AC85", face:"#E8B690", style:"boy", top:"#3FA45B", bottom:"#3B6FD1"},
+  {role:"k-bounce b1 in-a", pos:"", d:"-.2s", skin:"#C98B62", face:"#D39A70", style:"bun", top:"#9B62E8", bottom:"#FFC93C", skirt:true},
+  {role:"k-bounce b2 in-b", pos:"", d:"-.6s", skin:"#E0AC85", face:"#E8B690", style:"boy", top:"#3FA45B", bottom:"#3B6FD1"},
   // running around on the grass
-  {role:"k-run run-a", pos:"", d:"0s", skin:"#E0AC85", face:"#E8B690", style:"pigtails", top:"#FFD54A", bottom:"#F78FB3", skirt:true, bow:"#7B4FD6"},
-  {role:"k-run run-b", pos:"", d:"-.25s", skin:"#9C6644", face:"#A8714D", style:"curly", hair:"#1B120C", top:"#FF5A4E", bottom:"#1F3A68"}
+  {role:"k-run orbit o1", pos:"", d:"0s", skin:"#E0AC85", face:"#E8B690", style:"pigtails", top:"#FFD54A", bottom:"#F78FB3", skirt:true, bow:"#7B4FD6"},
+  {role:"k-run orbit o2", pos:"", d:"-.25s", skin:"#9C6644", face:"#A8714D", style:"curly", hair:"#1B120C", top:"#FF5A4E", bottom:"#1F3A68"},
+  {role:"k-run orbit o3", pos:"", d:"-.1s", skin:"#F2C7A5", face:"#F6CFAE", style:"boy", hair:"#4A2E1A", top:"#FF9F1C", bottom:"#2E8B57"}
 ];
 $("#kids").outerHTML = KIDS.map((k, n) => `<div class="kid ${k.role}" style="--d:${k.d}" aria-hidden="true">${kidSVG(k, n)}</div>`).join("");
 
