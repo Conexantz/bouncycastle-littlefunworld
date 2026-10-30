@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Little Fun World</title>
 <meta name="description" content="Bouncy castle rental in Singapore for HDB, condo and landed homes. Browse castles, see past parties and send a booking enquiry.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter+Tight:wght@700&family=Inter:wght@400;500;600&display=swap">
@@ -34,7 +36,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .top.scrolled{border-color:var(--line)}
 .top-in{height:var(--header-h);display:flex;align-items:center;gap:24px;max-width:1440px;margin:0 auto;padding-left:max(28px, env(safe-area-inset-left, 0px));padding-right:max(28px, env(safe-area-inset-right, 0px))}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-size:21px;letter-spacing:-.02em;flex:none}
-.logo svg{width:34px;height:34px}
+.logo img{width:40px;height:40px;object-fit:contain;flex:none}
 .nav{display:flex;gap:31px;margin:0 auto}
 .nav a{text-decoration:none;color:var(--ink);font-size:16px;font-weight:500;padding:6px 2px;border-bottom:2px solid transparent}
 .nav a:hover{color:var(--green)}
@@ -317,7 +319,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 <header class="top" id="top">
   <div class="top-in">
     <a class="logo" href="#home" aria-label="Little Fun World home">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="11" fill="#08482D"/><path d="M9 30V17l3-4 3 4v3h3v-6l2-3 2 3v6h3v-3l3-4 3 4v13z" fill="#DAE7C7"/><path d="M17 30v-4a3 3 0 0 1 6 0v4z" fill="#08482D"/></svg>
+      <img src="assets/logo.png" alt="" width="40" height="40">
       Little Fun World
     </a>
     <nav class="nav" aria-label="Main">
@@ -574,7 +576,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 <footer class="foot">
   <div class="wrap">
     <div>
-      <a class="logo" href="#home">Little Fun World</a>
+      <a class="logo" href="#home"><img src="assets/logo.png" alt="" width="40" height="40">Little Fun World</a>
       <small>Bouncy castle rental in Singapore · WhatsApp +65 8922 9783</small>
     </div>
     <nav aria-label="Footer">
