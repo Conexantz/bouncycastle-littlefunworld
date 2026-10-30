@@ -343,9 +343,9 @@ button,input,textarea,select{font:inherit;color:inherit}
 .empty{color:var(--muted);padding:30px;border:1px dashed var(--line);border-radius:16px;text-align:center}
 
 /* ---------- Terms ---------- */
-.terms{list-style:none;margin:0;padding:0;counter-reset:t;display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:14px;padding-bottom:88px}
-.terms li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px 20px 70px;position:relative;font-size:16.5px;min-width:0}
-.terms li::before{content:counter(t);position:absolute;left:20px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--mint);color:var(--green);display:grid;place-items:center;font-weight:600;font-variant-numeric:tabular-nums}
+.terms{list-style:none;margin:0;padding:0;counter-reset:t;display:grid;grid-template-columns:repeat(2, minmax(0,1fr));grid-auto-rows:1fr;gap:14px;padding-bottom:88px}
+.terms li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px 20px 70px;position:relative;font-size:16.5px;min-width:0;display:flex;flex-direction:column;justify-content:center;min-height:96px}
+.terms li::before{content:counter(t);position:absolute;left:20px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--mint);color:var(--green);display:grid;place-items:center;font-weight:600;font-variant-numeric:tabular-nums}
 .terms li.key{border-color:var(--green)}
 .terms small{display:block;color:var(--muted);margin-top:4px;font-size:14px}
 
