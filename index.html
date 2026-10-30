@@ -50,7 +50,15 @@ button,input,textarea,select{font:inherit;color:inherit}
 .view.on{display:block}
 
 /* ---------- Hero frame ---------- */
-.hero{display:flex;justify-content:center;overflow:hidden;background:var(--bg)}
+.hero{display:flex;justify-content:center;overflow:hidden;position:relative;background-color:#0B1410;
+  background-image:linear-gradient(180deg, rgba(5,12,9,.72) 0%, rgba(5,12,9,.45) 38%, rgba(5,12,9,.18) 62%, rgba(5,12,9,.62) 100%), url("assets/hero-bg.jpg");
+  background-size:cover;background-position:center 60%;background-repeat:no-repeat}
+.hero .h1{color:#FFFFFF;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero .sub{color:#E4EADB;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+.hero .note{color:var(--mint)}
+.hero .doodle path{stroke:var(--mint)}
+.hero .cta-ring{background:rgba(5,12,9,.35);border-color:var(--mint);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hero .cta{box-shadow:0 8px 28px rgba(0,0,0,.3)}
 .frame{--u:min(calc(100vw / 1440), calc((100svh - var(--header-h)) / 1000));--u:min(calc(100vw / 1440), calc((100vh - var(--header-h)) / 1000));position:relative;width:calc(1440 * var(--u));height:calc(1000 * var(--u));min-height:0}
 @supports (height:100svh){.frame{--u:min(calc(100vw / 1440), calc((100svh - var(--header-h)) / 1000))}}
 .badge{position:absolute;left:50%;top:calc(45 * var(--u));transform:translateX(-50%);height:calc(37 * var(--u));padding:0 calc(18 * var(--u));display:flex;align-items:center;gap:calc(8 * var(--u));border-radius:999px;background:var(--mint);color:var(--green);font-weight:500;font-size:calc(16.6 * var(--u));white-space:nowrap}
