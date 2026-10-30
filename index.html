@@ -62,7 +62,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 @keyframes drift{from{transform:translateX(-280px)}to{transform:translateX(calc(100vw + 40px))}}
 #confetti{position:absolute;inset:0;width:100%;height:100%;z-index:7;pointer-events:none}
 
-.scene-copy{position:relative;z-index:4;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;padding-top:40px}
+.scene-copy{position:relative;z-index:4;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:30px}
 .badge{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.85);color:var(--green);font-weight:600;font-size:15px;box-shadow:0 4px 18px rgba(20,70,110,.12)}
 .badge i{width:8px;height:8px;border-radius:50%;background:#3FA45B;display:block}
 .h1{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(42px, 6.2vw, 88px);line-height:.98;letter-spacing:-.035em;color:#0B2E1F;text-wrap:balance}
@@ -75,8 +75,8 @@ button,input,textarea,select{font:inherit;color:inherit}
 .cta.alt{background:#fff;color:var(--green);box-shadow:0 8px 22px rgba(20,70,110,.14)}
 .cta.alt:hover{background:#F2F7EC}
 
-.stage{position:relative;z-index:3;width:100%;max-width:1440px;margin:-10px auto 0;aspect-ratio:16/7.2}
-.trees{position:absolute;left:-4%;right:-4%;bottom:24%;height:30%;z-index:0;
+.stage{position:relative;z-index:3;width:100%;max-width:1440px;margin:-6vw auto 0;aspect-ratio:16/6.4}
+.trees{position:absolute;left:-4%;right:-4%;bottom:22%;height:30%;z-index:0;
   background:
    radial-gradient(circle at 4% 70%, #3E8B32 0 9%, transparent 9.3%),
    radial-gradient(circle at 11% 60%, #4E9C3D 0 10%, transparent 10.3%),
@@ -88,15 +88,15 @@ button,input,textarea,select{font:inherit;color:inherit}
 .ground{position:absolute;left:-6%;right:-6%;bottom:0;height:34%;z-index:1;border-radius:50% 50% 0 0 / 26% 26% 0 0;
   background:repeating-linear-gradient(100deg, rgba(255,255,255,.05) 0 26px, rgba(0,0,0,.03) 26px 52px), linear-gradient(180deg, #8AD456 0%, #6CC03E 40%, #57A82F 100%)}
 .castle-img{position:absolute;z-index:2;height:auto;transform-origin:50% 100%;animation:inflate 3.4s ease-in-out infinite;filter:drop-shadow(0 14px 10px rgba(20,60,20,.25))}
-.castle-img.dino{left:9%;bottom:16%;width:40%}
-.castle-img.ice{left:47%;bottom:13%;width:45%;animation-delay:-1.6s;z-index:2}
+.castle-img.dino{left:9%;bottom:14%;width:40%}
+.castle-img.ice{left:47%;bottom:11%;width:45%;animation-delay:-1.6s;z-index:2}
 @keyframes inflate{0%,100%{transform:scale(1,1)}50%{transform:scale(1.008,1.016)}}
 
 /* kids */
 .kid{position:absolute;z-index:5}
 .kid svg{display:block;width:100%;height:auto;overflow:visible}
 .kid .shadow{position:absolute;left:18%;right:18%;bottom:-3%;height:7%;border-radius:50%;background:rgba(20,50,20,.28);filter:blur(2px)}
-.boy-spot{left:28%;bottom:31%;width:7.2%;z-index:3;animation:shuffle 7s ease-in-out infinite alternate}
+.boy-spot{left:28%;bottom:33.5%;width:7.2%;z-index:3;animation:shuffle 7s ease-in-out infinite alternate}
 .boy-spot .kid{position:relative}
 .boy-spot .body{animation:bounce 1s cubic-bezier(.33,0,.67,1) infinite;transform-origin:50% 100%}
 .boy-spot .arm{animation:armsUp 1s ease-in-out infinite}
@@ -154,7 +154,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   .scene-copy{padding-top:26px;gap:12px}
   .badge{height:32px;font-size:13px;padding:0 13px}
   .cta{height:52px;padding:0 22px;font-size:15.5px}
-  .stage{aspect-ratio:1/1.02;margin-top:4px}
+  .stage{aspect-ratio:1/1.02;margin-top:-4px}
   .castle-img.dino{left:-5%;width:60%;bottom:21%}
   .castle-img.ice{left:39%;width:66%;bottom:15%}
   .boy-spot{width:10.5%;bottom:31%;animation-name:shuffleM}
