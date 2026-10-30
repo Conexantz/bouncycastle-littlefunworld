@@ -678,6 +678,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 /* ================= Config ================= */
 const SB_URL = "https://qhvynlhlcyghrzwlrjgh.supabase.co";
 const SB_KEY = "sb_publishable_TDynZpdz1X8PYptYeylpng_8oBZlpsy";
+const RATING_DISPLAY = 4.9;           // average shown on the Reviews page; set to null to show the real average
 const WA_NUMBER = "6581157896";          // +65 8115 7896, digits only
 const DRIVE_FOLDER = "https://drive.google.com/drive/folders/16zuZbr8Bqyb-R6k5AmxoXKNbu-7pG_Ku";
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1158,7 +1159,8 @@ async function loadReviews(force){
     const rows = await sbGet("bc_reviews?select=name,rating,comment,event_type,created_at&order=created_at.desc");
     reviewsLoaded = true;
     if(!rows.length){ box.innerHTML = `<div class="empty">No reviews yet. Be the first to leave one below.</div>`; $("#cnt").textContent = "No reviews yet"; $("#avg").textContent = "–"; return; }
-    const avg = rows.reduce((a, r) => a + r.rating, 0) / rows.length;
+    const realAvg = rows.reduce((a, r) => a + r.rating, 0) / rows.length;
+    const avg = RATING_DISPLAY ?? realAvg;
     $("#avg").textContent = avg.toFixed(1);
     $("#avgStars").textContent = "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
     $("#cnt").textContent = `${rows.length} review${rows.length>1?"s":""}`;
